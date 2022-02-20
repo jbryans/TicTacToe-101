@@ -1,7 +1,8 @@
 //       ***********************
 //            INSTRUCTIONS
 //       ***********************
-
+let jumbotron = document.getElementsByClassName ("jumbotron")
+console.log('jumbotron:',jumbotron)
 // 1. Read the code below one block at a time.
 // 2. Look for the @TODOs, and figure out how to fix them.
     // next to each @TODO you will find tasks that need to be finished
@@ -18,6 +19,7 @@ const handleClick = (element) => {
 
   // this uses the "log" method on the "console" to log out the element's id so we can see it with our human eyes
   console.log(`The element you clicked on has an id:  ${element.id}`)
+  console.log('document.getElementById(element.id).innerHTML:', document.getElementById(element.id).innerHTML)
 
   // this next line prevents an X being changed to an O or an O being changed to an X by...
   //  checking to see if the square clicked has anything in it, if not continue
@@ -44,7 +46,7 @@ const addMarker = (id) => {
   console.log(`Therefore, a  "${currentMarker}"  should be placed in the square with the id:  ${id}`)
   
   // @TODO-2: Build a line of code that will set the innerHTML property of the element that was clicked to the "currentMarker"
-  
+  let element = document.getElementById(id).innerHTML = currentMarker;
   // @TODO-2.5: MIX & MATCH, You will need the following pieces of code to build that line:
   // = currentMarker
   // .getElementById(id)
@@ -83,7 +85,7 @@ const changeMarker = () => {
 
 // This "resetBoard" function is called when the user clicks on the "Restart" button.
 const resetBoard = () => {
-  
+  let squares = document.getElementsByTagName("TD")
   // @TODO-3: To make your "Restart" button work you'll need to build a line of code here that:
       // collects all of the "td" elements into an HTML Collection: https://www.w3schools.com/jsref/dom_obj_htmlcollection.asp  
     
